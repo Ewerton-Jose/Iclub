@@ -1,22 +1,23 @@
 <ion-content color="dark">
   <ion-card>
+
     <ion-img alt="logo" src="../../assets/logo.png"></ion-img>
-    <form>
+
+    <form action="http://localhost/teste/api/api/login.php" method="post">
+
       <ion-item lines="full">
-        <ion-label position="floating">Email</ion-label>
-        <ion-input type="text" required></ion-input>
+        <ion-label position="floating">Usuário</ion-label>
+        <ion-input aria-label="Usuário"  name="user" type="text" required></ion-input>
       </ion-item>
+
       <ion-item lines="full">
         <ion-label position="floating">Senha</ion-label>
-        <ion-input type="password" required></ion-input>
+        <ion-input aria-label="Senha" type="password" required></ion-input>
       </ion-item>
-      
-      
-      </form>
-    </ion-card>
-    <ion-button type="Submit"  href="../folder">
-      Entrar
-    </ion-button>
-  
-</ion-content>
 
+      <button type="submit" formmethod="post"  header="../../folder" >Teste</button>
+
+      </form>
+
+    </ion-card>
+</ion-content>
