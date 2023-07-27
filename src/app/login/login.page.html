@@ -3,7 +3,7 @@
 
     <ion-img alt="logo" src="../../assets/logo.png"></ion-img>
 
-    <form action="http://localhost/teste/api/api/login.php" method="post">
+    <form (ngSubmit)="submitForm()">
 
       <ion-item lines="full">
         <ion-label position="floating">Usuário</ion-label>
@@ -12,10 +12,10 @@
 
       <ion-item lines="full">
         <ion-label position="floating">Senha</ion-label>
-        <ion-input aria-label="Senha" type="password" required></ion-input>
+        <ion-input aria-label="Senha" name="senha" type="password" required></ion-input>
       </ion-item>
 
-      <button type="submit" formmethod="post"  header="../../folder" >Teste</button>
+      <ion-button type="submit" >Teste</ion-button>
 
       </form>
 
