@@ -7,12 +7,12 @@
 
       <ion-item lines="full">
         <ion-label position="floating">Usuário</ion-label>
-        <ion-input aria-label="Usuário"  name="user" type="text" required></ion-input>
+        <ion-input aria-label="Usuário"  name="user" type="text" [(ngModel)]="dados.user" required></ion-input>
       </ion-item>
 
       <ion-item lines="full">
         <ion-label position="floating">Senha</ion-label>
-        <ion-input aria-label="Senha" name="senha" type="password" required></ion-input>
+        <ion-input aria-label="Senha" name="senha" type="password" [(ngModel)]="dados.senha" required></ion-input>
       </ion-item>
 
       <ion-button type="submit" >Teste</ion-button>

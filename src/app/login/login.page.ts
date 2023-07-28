@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  userData = { user: 'user', senha: 'senha' };
-  apiUrl = 'http://localhost/teste/api/api/login.php';
+  dados = { user: '', senha: '' };
+  apiUrl = 'http://127.0.0.1/teste/api/api/login.php';
 
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -20,15 +20,18 @@ export class LoginPage implements OnInit {
   }
 
   submitForm() {
-   
-    this.http.post(this.apiUrl, this.userData).subscribe((response) => {
-      if (response === 'success') {
-        this.router.navigate(['../folder']);
-       } else {
-        console.log("Error");
+    this.http.post<any>(this.apiUrl, this.dados).subscribe(
+      (response: any) => {
+        if (response && response.status === 'success') {
+          this.router.navigate(['../folder']);
+        } else {
+          console.log("Error");
+        }
+      },
+      (error) => {
+        console.log("Erro na requisição:", error);
       }
-      
-    });
+    );
   }
 
 }
